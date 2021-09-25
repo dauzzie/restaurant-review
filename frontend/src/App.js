@@ -27,10 +27,16 @@ function App() {
       <Container fluid>
         <Navbar user={user} logout={logout}/>
         <br/>
-        <Route path={["/", "/restaurants"]} exact component={RestaurantList} user={user}/>
-        <Route path="/restaurants/:id/review" render={(props) => <AddReview {...props} user={user}/>}/>
-        <Route path="/restaurants/:id" render={(props) => <Restaurant {...props} user={user}/>}/>
-        <Route path="/login" render={(props) => <Login {...props} login={login}/>}/>
+        <Route path={["/", "/restaurants"]} exact component={RestaurantList}/>
+        <Route path="/restaurants/:id/review" render={
+          (props) => <AddReview {...props} user={user}/>
+          }/>
+        <Route path="/restaurants/:id" render={
+          (props) => <Restaurant {...props} user={user}/>
+          }/>
+        <Route path="/login" render={
+          (props) => <Login {...props} login={login}/>
+          }/>
       </Container>
     </Router>
     </div>
